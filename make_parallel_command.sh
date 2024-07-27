@@ -10,4 +10,4 @@ do
   echo "bash ./main_bash.sh $genome $sample" >> parallel_command.txt
 done
 
-parallel -j 10 < ./parallel_command.txt
+parallel -j 10 --bar < ./parallel_command.txt
