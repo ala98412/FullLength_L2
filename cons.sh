@@ -4,10 +4,10 @@ sample=(L2-DR0049120.fa L2-DR0115233.fa L2-DR0126107.fa L2-family-20.fa L2-famil
 
 for sample in ${sample[@]}
 do
-   #echo "$sample cons"
-   #cons -sequence ./$sample/$sample.maf.rmGap.trim.sorted.fa -outseq ./$sample/$sample.maf.rmGap.trim.sorted.cons.fa plurality=1
-   #echo "$sample getorf"
-   #getorf -sequence ./$sample/$sample.maf.rmGap.trim.sorted.cons.fa -outseq ./$sample/$sample.maf.rmGap.trim.sorted.cons.orf.fa -minsize 300
+   echo "$sample cons"
+   cons -sequence ./$sample/$sample.maf.rmGap.trim.sorted.fa -outseq ./$sample/$sample.maf.rmGap.trim.sorted.cons.fa plurality=1
+   echo "$sample getorf"
+   getorf -sequence ./$sample/$sample.maf.rmGap.trim.sorted.cons.fa -outseq ./$sample/$sample.maf.rmGap.trim.sorted.cons.orf.fa -minsize 300
    echo "$sample interproscan"
    /home/why/Tools/interproscan-5.55-88.0/interproscan.sh -cpu 10 -f TSV -i ./$sample/$sample.maf.rmGap.trim.sorted.cons.orf.fa -d ./$sample/
 done
