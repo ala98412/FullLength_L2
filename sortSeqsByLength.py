@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
+import sys
 
-sample = "L2-family-562.fa"
+sample = sys.argv[1]
 file = f"./{sample}/{sample}.maf.rmGap.trim.fa"
 out = f"./{sample}/{sample}.maf.rmGap.trim.sorted.fa"
 
